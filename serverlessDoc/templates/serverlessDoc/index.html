@@ -1,0 +1,556 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Documentation</title>
+    <link rel="stylesheet" href="{% static 'serverlessDoc/main.css' %}">
+</head>
+<body>
+    <div class="headerMenu"></div>
+    <div class="wrapper">
+
+    <div class="doc">
+        <h3>Functions are blocks of code that run on demand without the need to manage any infrastructure to scale up and down<h3>
+            <div class="docContainer">
+
+                <h4>Serverless Function api endpoint: "To Send Whatsapp Messages"</h4>
+                <b>Note</b>:
+                <p>All endpoint url are valid</p>
+                <hr>
+                <h3>Introduction</h3>
+                <hr>
+
+                <p>This Documentation contains a Serverless function written in Python. to send an Messages using your Token and PhonenumbersID. Serverless Function component</p>
+                <h3>Requirements</h3>
+                <li>You need a facebook developer account. If you don't already have one,</li>
+            
+                <li>The phone number you are sending a message to also has to be a Whatsapp verified phone number.</li>
+                <li>You need to add your TOKEN and FROM_PHONE_NUMBER_ID to the connect to the Functions API.</li>
+                <li> (Httpie) is a command-line HTTP client. Its goal is to make CLI interaction with web services as human-friendly as possible. HTTPie is designed for testing, debugging, and generally interacting with APIs & HTTP servers.</li>
+                <li> Optional python Request libery</li>
+                <li>Curl client</li>
+                <hr>
+                <h3>Using the Functions Api</h3>
+                <h2>sending  Template Message........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>PhoneNumber</li>
+                <li>Template</li>
+                <li>Days</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/messages/custom Token==token FromPhoneNumberID==FromPhoneNumberID PhoneNumber==PhoneNumber Templace==sample_shipping_confirmation Days==23  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "PhoneNumber":"+2348120385367", "Template":"sample_shipping_confirmation","Days":"23"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "message sent"
+                      }
+                </div>
+                <hr>
+                <br/>
+
+
+                <h2>sending Message........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>PhoneNumber</li>
+                <li>Message</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/messagesPost/sendMsg Token==token FromPhoneNumberID==FromPhoneNumberID PhoneNumber==PhoneNumber Message==Message  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "PhoneNumber":"+2348120385367", "Message":"Good Morning from owolabi."}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "message sent"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Reply To Message........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>To (Reciever Phonunber)</li>
+                <li>MessageID</li>
+                <li>Message</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/messagesReply/Reply Token==token FromPhoneNumberID==FromPhoneNumberID To==To MessageID==MessageID Message==Message  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "To":"+2348120385367",  "MessageID":"MessageID", "Message":"Good Morning from owolabi."}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "Replyed  to PhoneNumber"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+
+                <h2>Send Video........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>Link (True or False default True)</li>
+                <li>Video (video Url)</li>
+                <li>PhoneNumber</li>
+                <li>Caption (optional)</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Send/video Token==token FromPhoneNumberID==FromPhoneNumberID video==videoUrl PhoneNumber==2328120385367 link==link  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "video":"url",  "PhoneNumber":"2348120385367", "link":"link"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "video send   to PhoneNumber"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+                
+
+
+                <h2>Send document........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>Link (True or False default True)</li>
+                <li>document (document Url)</li>
+                <li>PhoneNumber</li>
+                <li>Caption (optional)</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Send/document Token==token FromPhoneNumberID==FromPhoneNumberID document==documentUrl PhoneNumber==2328120385367 link==link  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "document":"url",  "PhoneNumber":"2348120385367", "link":"link"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "document send   to PhoneNumber"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Send image........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>Link (True or False default True)</li>
+                <li>image (image Url)</li>
+                <li>PhoneNumber</li>
+                <li>Caption (optional)</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Send/image Token==token FromPhoneNumberID==FromPhoneNumberID document==documentUrl PhoneNumber==2328120385367 link==link  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "document":"url",  "PhoneNumber":"2348120385367", "link":"link"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "image send   to PhoneNumber"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+
+                <h2>Send Location........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>LONG_NUMBER</li>
+                <li>PhoneNumber</li>
+                <li>LOCATION_NAME</li>
+                <li>LAT_NUMBER</li>
+                <li>LOCATION_ADDRESS</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/messagesLocation/location Token==token FromPhoneNumberID==FromPhoneNumberID LONG_NUMBER==2.34 PhoneNumber==2328120385367 LOCATION_NAME==Lagos LAT_NUMBER==23.1  LOCATION_ADDRESS==11eastpart  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "LONG_NUMBER":"2.34",  "PhoneNumber":"2348120385367", "LOCATION_NAME":"Lagos","LAT_NUMBER":"23.1","LOCATION_ADDRESS":"11 eastpark"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "location send   to PhoneNumber"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Send Contact........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>FromPhoneNumberID</li>
+                <li>PhoneNumber</li>
+                <li>FullName</li>
+                <li>FirstName</li>
+                <li>LastName</li>
+                <li>MiddleName</li>
+                <li>Street</li>
+                <li>City</li>
+                <li>State</li>
+                <li>Country</li>
+                <li>ZipCode</li>
+                <li>Contact</li>
+                <li>CompanyName</li>
+                <li>YourDpt</li>
+                <li>Title</li>
+                <p>To send Message using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/messagesContact/contact Token==token FromPhoneNumberID==FromPhoneNumberID LONG_NUMBER==2.34 PhoneNumber==2328120385367 LOCATION_NAME==Lagos LAT_NUMBER==23.1  LOCATION_ADDRESS==11eastpart  </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","FromPhoneNumberID":"123456789012435", "LONG_NUMBER":"2.34",  "PhoneNumber":"2348120385367", "LOCATION_NAME":"Lagos","LAT_NUMBER":"23.1","LOCATION_ADDRESS":"11 eastpark"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "Contact send   to PhoneNumber"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Response From webHook</h2>
+                <hr>
+                <p>Endpoint to Extract data from Whatsapp webHook response</p>
+
+
+
+                <h2>Get Video</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Get/video data==data  </p>
+                </div>
+
+                <br>
+                <p>To get video using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Get Messages</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Get/message data==data  </p>
+                </div>
+
+                <br>
+                <p>To get Message using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Get location</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Get/location data==data  </p>
+                </div>
+
+                <br>
+                <p>To get location using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Get Sender Name</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Contact/name data==data  </p>
+                </div>
+
+                <br>
+                <p>To get sender Name using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Get MessageID</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Getmessage/ID data==data  </p>
+                </div>
+
+                <br>
+                <p>To get  MessageID using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Get Sender number</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/GetSender/number data==data  </p>
+                </div>
+
+                <br>
+                <p>To get  sender number using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Get MessageType</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Get/messageType data==data  </p>
+                </div>
+
+                <br>
+                <p>To get  MessageType using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Get MessageTimeStamp</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Getmessage/timestamp data==data  </p>
+                </div>
+
+                <br>
+                <p>To get MessageTimeStamp using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Get Message delivery status</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Data</li>
+                <div class="links">
+                    <p>https https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-ca632dbd-84ac-49ad-87a7-9c107cbf0c54/Get/delivery data==data  </p>
+                </div>
+
+                <br>
+                <p>To get MessageTimeStamp using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"data":"data"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "data object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="OnPage">
+        <h4>On this Page</h4>
+        <p>send messages with template</p>
+        <p>send message to customer</p>
+        <p> Reply To Message</p>
+        <p>Send video</p>
+        <p>Send image</p>
+        <p>send document</p>
+        <p>send contact</p>
+        <p>Send location</p>
+        <hr>
+        <h4> Response from webHook</h4>
+        <p>Get video Data</p>
+        <p>Get Image Data</p>
+        <p>Get document Data</p>
+        <p>Get Message ID </p>
+        <p> Get Location</p>
+        <p>Get Message</p>
+        <p>Get message type</p>
+        <p>Get Sender Name</p>
+        <p>Get sender Number</p>
+        <p>Get Messag TimeStamp</p>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(12, 62, 95);
+    font-size: 15px;
+}
+.headerMenu{
+    width: 100%;
+    padding: 15px;
+    background-color: aliceblue;
+    border-bottom: 1px solid lightgray;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+}
+.doc{
+    width: 80%;
+    border-right: 1px solid lightgray;
+    padding: 10px 15px;
+   
+   
+
+}
+.OnPage{
+    width: 20%;
+    padding: 10px 15px;
+   
+   
+}
+.doc .docContainer{
+    line-height: 30px;
+    font-size: 15px;
+    padding: 10px 15px;
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    width: 100%;
+    margin: auto;
+}
+
+.doc .docContainer hr{ 
+    width: 100%;
+    
+}
+.doc .docContainer .links{
+    margin-left: 10px;
+    background-color: rgb(211, 222, 231);
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 10;
+    overflow: auto;
+    white-space: nowrap;
+}
