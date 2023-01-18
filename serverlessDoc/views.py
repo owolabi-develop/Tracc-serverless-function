@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request,"serverlessDoc/index.html",{})
+
+def SlackDoc(request):
+    return render(request,"serverlessDoc/SlackDoc.html")

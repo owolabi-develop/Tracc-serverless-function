@@ -16,6 +16,19 @@ body{
     background-color: aliceblue;
     border-bottom: 1px solid lightgray;
 }
+.headerMenu a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-transform: capitalize;
+}
+.headerMenu a:hover{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-transform: capitalize;
+    color: rgb(51, 54, 54);
+}
 .wrapper{
     width: 100%;
     display: flex;

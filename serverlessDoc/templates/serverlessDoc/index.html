@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="{% static 'serverlessDoc/main.css' %}">
 </head>
 <body>
-    <div class="headerMenu"></div>
+    <div class="headerMenu">
+        <a href="{% url 'index' %}">Whatsapp-Doc</a>
+        <a href="{% url 'Slack' %}">Slack-Doc</a>
+    </div>
     <div class="wrapper">
 
     <div class="doc">

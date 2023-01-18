@@ -1,0 +1,458 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Documentation Slack</title>
+    <link rel="stylesheet" href="{% static 'serverlessDoc/main.css' %}">
+</head>
+<body>
+    <div class="headerMenu">
+        <a href="{% url 'index' %}">Whatsapp Doc</a>
+        <a href="{% url 'Slack' %}">Slack Doc</a>
+    </div>
+    <div class="wrapper">
+
+    <div class="doc">
+        <h3>Functions are blocks of code that run on demand without the need to manage any infrastructure to scale up and down<h3>
+            <div class="docContainer">
+
+                <h4>Serverless Function api endpoint: "To Send  Messages To Slack Channel and workSpace"</h4>
+                <b>Note</b>:
+                <p>All endpoint url are valid</p>
+                <hr>
+                <h3>Introduction</h3>
+                <hr>
+
+                <p>This Documentation contains a Serverless function written in Python. to send an Messages using your user_token or bot_token. Serverless Function component</p>
+                <h3>Requirements</h3>
+                <li>You need a Sack developer account. If you don't already have one,</li>
+                <li>Create a slack App  to generate your USER_TOKEN AND BOT_TOKEN</li>
+            
+                <li>Got to app</li>
+                <li>You need to add your slack developer USER_TOKEN or  BOT_TOKEN to the connect to the Functions API.</li>
+                <li> (Httpie) is a command-line HTTP client. Its goal is to make CLI interaction with web services as human-friendly as possible. HTTPie is designed for testing, debugging, and generally interacting with APIs & HTTP servers.</li>
+                <li> Optional python Request libery</li>
+                <li>Curl client</li>
+                <hr>
+                <h3>Using the Functions Api</h3>
+                <h2>Create Channel........</h2>
+                <hr><!-- sending message-->
+                <p>Required argument case sensitive</p>
+
+                <li>Token</li>
+                <li>Name: e.g (sales)</li>
+                <li>Private: True or False (Default False)</li>
+        
+                <p>To Create Channel using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Create/Channel Token==Token Name=="sales"  </p>
+                </div>
+
+                <br>
+                <p>To Create Channel using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '"Token":"iuoueihuy7y3272980912","Name":"Sales",'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "Channel Created"
+                      }
+                </div>
+                <hr>
+                <br/>
+
+
+                <h2>Join Channel........</h2>
+                <hr><!-- sending message-->
+                <p>Required argument case sensitive</p>
+                <li>Token</li>
+                <li>Channel_ID</li>
+                <p>To Join Channel using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Join/Channel Token==token Channel_ID==ID  </p>
+                </div>
+
+                <br>
+                <p>To Join Channel using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","Channel_ID":"cd4335fdt"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "You just Joined this CHannel"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Leave Channel........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>Channel_ID</li>
+                
+                <p>To Leave channel using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Leave/Channel Token==token Channel_ID=="33rgfdrtey"  </p>
+                </div>
+
+                <br>
+                <p>To leave channel using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","Channel_ID":"123456789012435"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "You just left this channel"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+
+                <h2>Rename Channel........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>channel</li>
+                <li>name(True or False default True)</li>
+                
+                <p>To Rename channel using Httpie</p>
+                <div class="links">
+                    <p>httpshttps://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Rename/Channel Token==token channel==channel name=='travel'  </p>
+                </div>
+
+                <br>
+                <p>To Rename channel using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","channel":"133fdgsfw2", "name":"Travel"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "Channel rename from old to new"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+                
+
+
+                <h2>Show All Channel in workSpace public and private........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>Type e.g(public_channel or private_channel) default public_channel</li>
+                <li>Limit</li>
+                
+                <p>To show all channel using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/DisplayAll/Channel Token==token Type==public_channel,Limit=2  </p>
+                </div>
+
+                <br>
+                <p>To To show all channel using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","Type":"public_channel","Limit":2}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "object"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Send channel invite........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>Users e.g(ids,)</li>
+                <li>channel </li>
+    
+                <p>To Send channel invite using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/InviteUserTo/Channel Token==token users==userid,userid channel==channelid</p>
+                </div>
+
+                <br>
+                <p>To Send channel invite curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","users":"userid,userid", "channel":"67yiqtru"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "invitation sent to user"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+
+                <h2>Remove User from Channel........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>user</li>
+                <li>channel</li>
+               
+                <div class="links">
+                    <p>httpshttps://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/RemoveUserFrom/Channel Token==token user==userid channel==channel </p>
+                </div>
+
+                <br>
+                <p>To send Message using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","user":"Userid"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "User remove from channel"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                <h2>Set Channel Topic........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>topic</li>
+                <li>channel</li>
+               
+                <p>To set channel topic using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/SetChannel/Topic Token==token topic==topic channel==channel_id  </p>
+                </div>
+
+                <br>
+                <p>To set channel topic using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","topic":"trade of the day", "channel":"ghjgjhwerg4"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "topic Created"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                <h2>Set Channel Purpose........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>purpose</li>
+                <li>channel</li>
+               
+                <p>To set channel purpose using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/SetChannel/Purpose Token==token purpose==purpose channel==channel_id  </p>
+                </div>
+
+                <br>
+                <p>To set channel purpose using curl</p>
+                <div class="links">
+                    <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","purpose":"trade of the day", "channel":"ghjgjhwerg4"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "purpose Created"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+                
+                <h2>Display all User In channel........</h2>
+                <hr><!-- sending message-->
+                <p>Required Parameter</p>
+                <li>Token</li>
+                <li>Limit</li>
+              
+               
+                <p>To display all user in channel using Httpie</p>
+                <div class="links">
+                    <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Users/List Token==token Limit==2  </p>
+                </div>
+
+                <br>
+                <p>To display all user in channel using curl</p>
+                <div class="links">
+                    <p>curl -X GET -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","Limit":"2"}'   </p>
+                </div>
+                <p>Response</p>
+
+                <div class="links">
+                    {
+                        "Status": "Users Objects"
+                      }
+                </div>
+                <hr>
+                <br/>
+                <!---space-->
+
+
+                 <!---space-->
+
+                
+                 <h2>Post Message to channel........</h2>
+                 <hr><!-- sending message-->
+                 <p>Required Parameter</p>
+                 <li>Token</li>
+                 <li>channel</li>
+
+                 <li>Text,blocks attachement one must be present</li>
+               
+                
+                 <p>To Post Message to channel using Httpie</p>
+                 <div class="links">
+                     <p>httpshttps://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Post/Message Token==token channel='8908uerur' text=='hello world'  </p>
+                 </div>
+ 
+                 <br>
+                 <p>Post Message to channel</p>
+                 <div class="links">
+                     <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","channel":"74395o","text":"hello world"}'   </p>
+                 </div>
+                 <p>Response</p>
+ 
+                 <div class="links">
+                     {
+                         "Status": "Message sent to channel"
+                       }
+                 </div>
+                 <hr>
+                 <br/>
+                 <!---space-->
+
+                 <h2>Post Message to user in channel........</h2>
+                 <hr><!-- sending message-->
+                 <p>Required Parameter</p>
+                 <li>Token</li>
+                 <li>channel</li>
+                 <li>user</li>
+
+                 <li>Text,blocks attachement one must be present</li>
+               
+                
+                 <p>To Post Message to user channel using Httpie</p>
+                 <div class="links">
+                     <p>httpshttps://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/PostEphemeral/Message Token==token channel='8908uerur' user==userid text=='hello world'  </p>
+                 </div>
+ 
+                 <br>
+                 <p>Post Message to user in channel</p>
+                 <div class="links">
+                     <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","channel":"74395o","user":"userid","text":"hello world"}'   </p>
+                 </div>
+                 <p>Response</p>
+ 
+                 <div class="links">
+                     {
+                         "Status": "Message sent to user"
+                       }
+                 </div>
+                 <hr>
+                 <br/>
+                 <!---space-->
+
+                  <!---space-->
+
+                  <h2>Send file to Channel........</h2>
+                  <hr><!-- sending message-->
+                  <p>Required Parameter</p>
+                  <li>Token</li>
+                  <li>channel</li>
+                  <li>file (any)</li>            
+                  <p>Send file Channel. using Httpie</p>
+                  <div class="links">
+                      <p>https https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-15807169-84e8-4712-af3f-0667ee1f30ce/Send/Files Token==token channel='8908uerur' file=file   </p>
+                  </div>
+  
+                  <br>
+                  <p>Send file Channel. using Curl</p>
+                  <div class="links">
+                      <p>curl -X POST -H 'Content-Type: application/json' {your-url} -d '{"Token":"iuoueihuy7y3272980912","channel":"74395o","file":"me.png,doct.txt"}'   </p>
+                  </div>
+                  <p>Response</p>
+  
+                  <div class="links">
+                      {
+                          "Status": "channel objects"
+                        }
+                  </div>
+                  <hr>
+                  <br/>
+                  <!---space-->
+
+                
+
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="OnPage">
+        <h4>On this Page</h4>
+        <p>Create Channel</p>
+        <p>Join Channel</p>
+        <p> Rename Channel</p>
+        <p>Leave Channel</p>
+        <p>Send Channel Invite</p>
+        <p>Rename Channel</p>
+        <p>Remove User from Channel</p>
+        <p>Set Channel Topic</p>
+        <p>Set Purpose of Channel</p>
+        <p>Display All Channel in workSpace</p>
+        <p>Display all User In channel</p>
+        <p>Post Message</p>
+        <p>Post Ephemeral Messag</p>
+        <p>Send File TO Channel</p>
+       
+    </div>
+
+</div>
+</body>
+</html>
